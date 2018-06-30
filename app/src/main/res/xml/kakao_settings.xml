@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="message"
+        android:title="소리 알림"
+        android:summary="소리로 알림을 받으려면 체크하세요"/>
+
+    <SwitchPreference
+        android:key="vibrate"
+        android:title="진동 알림"
+        android:summary="진동 울림으로 알림을 받으려면 체크하세요"/>
+
+    <EditTextPreference
+        android:key="nickname"
+        android:title="Nickname"
+        android:summary="Nickname을 설정하세요"
+        android:dialogTitle="Nickname 설정"/>
+
+    <ListPreference
+        android:key="sound"
+        android:title="알림음"
+        android:summary="카톡"
+        android:entries="@array/array_voice"
+        android:entryValues="@array/array_voice"/>
+
+    <RingtonePreference
+        android:title="choose alarm"
+        android:key="ringtone"
+        android:summary="ringtone"/>
+
+    <PreferenceCategory android:title="디버깅">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="debugging"
+            android:summary="USB가 연결된 경우 디버그 모드 사용"
+            android:title="USB 디버깅"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="debugging"
+            android:key="usb_app"
+            android:summary="ADB/ADT를 통해 설치된 앱의 유해한 동작이 있는지 확인"
+            android:title="USB를 통해 설치된 앱 확인"/>
+
+    </PreferenceCategory>
+
+    <PreferenceScreen android:title="이동통신망">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="roaming"
+            android:summary="로밍시 데이터 서비스에 연결"
+            android:title="데이터 로밍"/>
+
+        <SwitchPreference
+            android:key="lte_mode"
+            android:summary="LTE 서비스를 사용하여 음성 및 기타 통신을 개선할 수 있습니다"
+            android:title="향상된 4G LTE 모드"/>
+
+    </PreferenceScreen>
+
+
+</PreferenceScreen>

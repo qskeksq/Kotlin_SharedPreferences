@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Preference Category One">
+
+        <CheckBoxPreference
+            android:key="pref_checkbox"
+            android:title="CheckBox Preference"
+            android:defaultValue="true"
+            android:summary="체크박스 설정값입니다"/>
+
+        <EditTextPreference
+            android:key="pref_editText"
+            android:title="EditText Preference"
+            android:defaultValue="입력상자 기본값입니다"
+            android:dependency="pref_checkbox"
+            android:summary="입력상자 기본값"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"/>
+
+        <ListPreference
+            android:key="pref_list"
+            android:title="List Preference"
+            android:defaultValue="1"
+            android:dependency="pref_checkbox"
+            android:summary="select sync type"
+            android:entries="@array/pref_list"
+            android:entryValues="@array/pref_list"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Preference Category Two">
+
+        <SwitchPreference
+            android:key="pref_switch"
+            android:title="Switch Preference"
+            android:defaultValue="true"
+            android:summary="스위치 설정값입니다"
+            android:switchTextOff="off"
+            android:switchTextOn="on"/>
+
+        <RingtonePreference
+            android:key="pref_ringtone"
+            android:title="Ringtone Preference"
+            android:summary="ringtone"
+            android:ringtoneType="ringtone"
+            android:showDefault="true"
+            android:showSilent="true"/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceScreen
+        android:summary="new screen"
+        android:title="new screen">
+
+        <SwitchPreference
+            android:key="pref_switch_two"
+            android:title="new screen switch"
+            android:summary="switch"
+            android:switchTextOff="off"
+            android:switchTextOn="on" />
+
+    </PreferenceScreen>
+
+</PreferenceScreen>
